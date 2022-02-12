@@ -1,0 +1,58 @@
+// 
+body {
+  margin: 0;
+}
+
+// Color
+$yellow-light: #F9F3E5;
+$yellow-dark: #F4D799;
+$peach-light: #FFF0EE;
+$peach-dark: #F6A89E;
+$aqua-light: #D0F4F0;
+$aqua-dark: #8CD4CB;
+
+.bg-yellow-light {
+  background-color: $yellow-light
+}
+
+.bg-yellow-dark {
+  background-color: $yellow-dark
+}
+
+.bg-peach-light {
+  background-color: $peach-light
+}
+
+.bg-peach-dark {
+  background-color: $peach-dark
+}
+
+.bg-aqua-light {
+  background-color: $aqua-light
+}
+
+.bg-aqua-dark {
+  background-color: $aqua-dark
+}
+// font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+$font-roboto: 'Roboto', sans-serif;
+
+.completed {
+  font: 20px $font-roboto;
+  text-decoration: line-through;
+}
+
+.text-big {
+  font: 20px $font-roboto;
+}
+
+.text-small {
+  font: 16px $font-roboto;
+}
+
+.text-title {
+  font: 24px $font-roboto;
+  font-weight: 900;
+}

@@ -1,0 +1,13 @@
+@use '../base';
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $peach-dark;
+
+  &__card {
+    text-align: center;
+  }
+}

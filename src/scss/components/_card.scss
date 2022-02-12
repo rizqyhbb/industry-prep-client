@@ -1,0 +1,19 @@
+@use '../base';
+
+.card {
+  border: 3px solid black;
+  border-radius: 12px;
+  width: 300px;
+  padding: 10px 10px;
+  // background-color: $yellow-dark;
+  box-shadow: 12px 12px;
+  
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__hr {
+    border: 1px solid black;
+  }
+}
