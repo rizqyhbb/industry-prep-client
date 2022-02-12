@@ -1,0 +1,12 @@
+@use '../base';
+.input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    margin: 10px 0;
+    width: 80%;
+}
+
+.input::placeholder {
+  font: 16px $font-roboto;
+}

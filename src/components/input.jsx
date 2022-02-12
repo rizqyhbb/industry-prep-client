@@ -1,6 +1,6 @@
 const Input = (props) => {
   return (
-    <input className="input" type={props.type}  />
+    <input className="input text-small" type={props.type} onChange={props.onChange} placeholder={props.placeholder}/>
   )
 }
 

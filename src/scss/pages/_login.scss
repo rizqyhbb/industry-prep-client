@@ -5,9 +5,16 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $peach-dark;
 
   &__card {
     text-align: center;
+  }
+
+  &__card-input {
+    margin: 10px 0;
+  }
+
+  &__card-button {
+    margin: 10px;
   }
 }
