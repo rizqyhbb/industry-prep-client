@@ -1,0 +1,33 @@
+.task {
+  height: 100vh;
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+  }
+
+  &__card-content {
+    height: 70vh;
+  }
+
+  &__card-complete {
+    text-decoration: line-through;
+    margin: 0;
+  }
+
+  &__card-incomplete {
+    margin: 0;
+  }
+
+  &__card-form {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__card-form-input {
+    margin-right: 15px;
+  }
+}
