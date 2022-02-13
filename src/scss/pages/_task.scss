@@ -8,6 +8,15 @@
     height: calc(100vh - 60px);
   }
 
+  &__card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px auto;
+    padding: 7px 0;
+    border-bottom: 1px solid grey;
+  }
+
   &__card-content {
     height: 70vh;
   }

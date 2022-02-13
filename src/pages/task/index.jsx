@@ -1,4 +1,4 @@
-import { Navbar, Card, Input, Button } from "../../components"
+import { Navbar, Card, Input, Button, Delete } from "../../components"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
@@ -14,7 +14,6 @@ const TaskPage = () => {
   const getTasks = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/task`, config)
-      console.log(response.data)
       setTodos(response.data);
     } catch (err) {
       console.log(err)
@@ -28,10 +27,18 @@ const TaskPage = () => {
   const addTask = async (e) => {
     try {
       e.preventDefault()
-      const request = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/task`, {task}, config)
-      console.log(request)
-      getTasks()
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/task`, {task}, config)
+      await getTasks()
       setTask('');
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const deleteTask = async (id) => {
+    try {
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/task/${id}`, config)
+      getTasks()
     } catch (err) {
       console.log(err)
     }
@@ -54,14 +61,14 @@ const TaskPage = () => {
           </form>
           {todos.map((todo) =>
           todo.complete ? 
-            <div key={todo.id}>
+            <div key={todo.id} className="task__card-container">
               <p className="task__card-complete">{todo.task}</p>
-              <hr className="task_card-hr"/>
+              <Delete onClick={() => deleteTask(todo.id)}/>
             </div> 
           :
-            <div key={todo.id}>
+            <div key={todo.id} className="task__card-container">
               <p className="task__card-incomplete">{todo.task}</p>
-              <hr className="task_card-hr"/>
+              <Delete onClick={() => deleteTask(todo.id)}/>
              </div>
           )}
         </Card>
