@@ -1,4 +1,4 @@
-import { Navbar, Card, Input, Button, Delete } from "../../components"
+import { Navbar, Card, Input, Button, Delete, Checkbox } from "../../components"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
@@ -19,6 +19,7 @@ const TaskPage = () => {
       console.log(err)
     }
   }
+
   
   useEffect(() => {
     getTasks()
@@ -43,6 +44,15 @@ const TaskPage = () => {
       console.log(err)
     }
   }
+  
+  const updateTask = async (complete ,id) => {
+    try {
+      const request = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/task/${id}`,{complete}, config)
+      console.log(request)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div className="task bg-aqua-dark">
@@ -62,11 +72,13 @@ const TaskPage = () => {
           {todos.map((todo) =>
           todo.complete ? 
             <div key={todo.id} className="task__card-container">
+              <Checkbox id={todo.id} checked={true} />
               <p className="task__card-complete">{todo.task}</p>
               <Delete onClick={() => deleteTask(todo.id)}/>
             </div> 
           :
             <div key={todo.id} className="task__card-container">
+              <Checkbox id={todo.id} checked={true} onChange={() => updateTask(todo.id)}/>
               <p className="task__card-incomplete">{todo.task}</p>
               <Delete onClick={() => deleteTask(todo.id)}/>
              </div>

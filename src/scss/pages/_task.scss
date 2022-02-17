@@ -24,10 +24,12 @@
   &__card-complete {
     text-decoration: line-through;
     margin: 0;
+    flex-grow: 10;
   }
 
   &__card-incomplete {
     margin: 0;
+    flex-grow: 10;
   }
 
   &__card-form {
