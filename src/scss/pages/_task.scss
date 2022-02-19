@@ -17,19 +17,29 @@
     border-bottom: 1px solid grey;
   }
 
+  &__card-input {
+    display: flex;
+    align-items: center;
+  }
+
+  &__card-todos {
+    overflow: auto;
+    height: 75%;
+  }
+
   &__card-content {
     height: 70vh;
   }
 
   &__card-complete {
     text-decoration: line-through;
-    margin: 0;
-    flex-grow: 10;
+    margin: 0 8px;
+    word-break: break-word;
   }
 
   &__card-incomplete {
-    margin: 0;
-    flex-grow: 10;
+    margin: 0 8px;
+    word-break: break-word;
   }
 
   &__card-form {

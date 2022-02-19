@@ -25,7 +25,7 @@ const LoginPage = () => {
       e.preventDefault()
       const user = {email, password}
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, user)
-      window.localStorage.setItem('token', response.data)
+      window.localStorage.setItem('token', response.data.token)
       setIsLoading(false)
       history.push(ROUTES.TASK)
     } catch (err) {

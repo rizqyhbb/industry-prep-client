@@ -47,8 +47,8 @@ const TaskPage = () => {
   
   const updateTask = async (complete ,id) => {
     try {
-      const request = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/task/${id}`,{complete}, config)
-      console.log(request)
+      await axios.put(`${process.env.REACT_APP_BACKEND_URL}/task/${id}`,{complete}, config)
+      getTasks()
     } catch (err) {
       console.log(err)
     }
@@ -69,20 +69,19 @@ const TaskPage = () => {
             />
             <Button onClick={addTask}>Add</Button>
           </form>
+          <div className="task__card-todos">
           {todos.map((todo) =>
-          todo.complete ? 
             <div key={todo.id} className="task__card-container">
-              <Checkbox id={todo.id} checked={true} />
-              <p className="task__card-complete">{todo.task}</p>
-              <Delete onClick={() => deleteTask(todo.id)}/>
+              <div className="task__card-input"> 
+              <Checkbox id={todo.id} onChange={() => updateTask(!todo.complete, todo.id)} checked={todo.complete ? true : false}/>
+              <p className={todo.complete ? "task__card-complete" : "task__card-incomplete" }>{todo.task}</p>
+              </div>
+              <div className="task__card-btn">
+                <Delete onClick={() => deleteTask(todo.id)}/> 
+              </div>
             </div> 
-          :
-            <div key={todo.id} className="task__card-container">
-              <Checkbox id={todo.id} checked={true} onChange={() => updateTask(todo.id)}/>
-              <p className="task__card-incomplete">{todo.task}</p>
-              <Delete onClick={() => deleteTask(todo.id)}/>
-             </div>
           )}
+          </div>
         </Card>
       </div>
     </div>

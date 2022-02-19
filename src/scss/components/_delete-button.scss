@@ -2,13 +2,18 @@
   border: 3px solid black;
   box-shadow: 2px 2px;
   border-radius: 10px;
-  width: 30px;
-  height: 30px;
-  padding: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 
   &__btn {
-
+    background-color: transparent;
+    padding: 0;
+    margin: 4px;
+    border: none;
   }
   
   &__img {

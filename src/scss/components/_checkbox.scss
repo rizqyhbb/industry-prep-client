@@ -1,24 +1,23 @@
+@use '../base';
+
 .checkbox {
 
-  flex-grow: 1;
-  
   &__input {
     display: none;
   }
 
-  &__label-container {
+  &__label {
     border: 3px solid black;
     border-radius: 10px;
-    width: 16px;
-    height: 16px;
-    padding: 4px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
-    background-color: red;
+    background-color: $peach-dark;
     box-shadow: 2px 2px;
   }
 
   &__img {
-    max-width: 150%;
+    max-width: 80%;
   }
 }
