@@ -1,0 +1,7 @@
+@use '../base';
+.toast {
+  border: 1px solid black !important;
+  background-color: $yellow-dark !important;
+  box-shadow: 4px 4px !important;
+  font-weight: bold !important;
+}

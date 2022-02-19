@@ -1,5 +1,6 @@
 import { Card, Button, Input } from "../../components";
 import { Link, useHistory } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 import ROUTES from "../../routes";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -18,7 +19,9 @@ const LoginPage = () => {
       setIsDisabled(true)
     }
   }, [email, password])
-
+  
+  const notify = (str) => toast(str);
+  
   const login = async(e) => {
     try {
       setIsLoading(true)
@@ -30,12 +33,16 @@ const LoginPage = () => {
       history.push(ROUTES.TASK)
     } catch (err) {
       setIsLoading(false)
-      console.log(err)
+      notify(err.response.data.message)
     }
   }
 
   return (
     <div className="login bg-peach-dark">
+      <Toaster toastOptions={{
+        className:"toast text-l",
+        duration: 2_000
+      }}/>
       <Card className="login__card" title="Login">
         <form onSubmit={login}>
           <div className="login__card-input">
