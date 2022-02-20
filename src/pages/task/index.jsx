@@ -23,7 +23,7 @@ const TaskPage = () => {
   
   useEffect(() => {
     getTasks()
-  },[])
+  })
   
   const addTask = async (e) => {
     try {
