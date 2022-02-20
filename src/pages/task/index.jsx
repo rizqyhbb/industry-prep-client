@@ -69,20 +69,20 @@ const TaskPage = () => {
             />
             <Button onClick={addTask}>Add</Button>
           </form>
-          <div className="task__card-todos">
-          {todos.map((todo) =>
-            <div key={todo.id} className="task__card-container">
-              <div className="task__card-input"> 
-              <Checkbox id={todo.id} onChange={() => updateTask(!todo.complete, todo.id)} checked={todo.complete ? true : false}/>
-              <p className={todo.complete ? "task__card-complete" : "task__card-incomplete" }>{todo.task}</p>
-              </div>
-              <div className="task__card-btn">
-                <Delete onClick={() => deleteTask(todo.id)}/> 
-              </div>
-            </div> 
-          )}
+            <div className="task__card-todos">
+            {todos.map((todo) =>
+              <div key={todo.id} className="task__card-container">
+                <div className="task__card-input"> 
+                <Checkbox id={todo.id} onChange={() => updateTask(!todo.complete, todo.id)} checked={todo.complete ? true : false}/>
+                <p className={todo.complete ? "task__card-complete" : "task__card-incomplete" }>{todo.task}</p>
+                </div>
+                <div className="task__card-btn">
+                  <Delete onClick={() => deleteTask(todo.id)}/> 
+                </div>
+              </div> 
+            )}
           </div>
-        </Card>
+          </Card>
       </div>
     </div>
   )
